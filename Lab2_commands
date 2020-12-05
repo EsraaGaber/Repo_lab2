@@ -1,0 +1,41 @@
+mkdir NRepo
+touch file1 file2 file3
+git init
+git add .
+git commit -m "creating 3 text files"
+vi file1
+vi file2
+vi file3
+git add .
+git commit -m "editing 3 text files"
+git remote add origin https://github.com/EsraaGaber/repo_lab2.git
+git branch -M main
+git push -u origin main
+git branch dev
+git branch test
+git checkout dev
+touch f1 f2
+vi f1
+vi f2
+git add .
+git commit -m "adding and editing 2 files to branch dev"
+git push origin dev
+git checkout main
+git merge dev
+git push origin main
+--> delete branch remotelly
+git push origin : branch_name
+--> delete branch locally
+git branch -d branch_name
+---------------------
+Tags:
+git tag -a v1.4 -m "create tag 1.4"
+git push origin v1.4
+git tag
+--> delete tag remotelly
+git push --delete origin tagname
+--> delete tag locally
+git tag -d tag_name
+---------------------
+Git rebase:
+Git rebase in standard mode will automatically take the commits in your current working branch and apply them to the head of the passed branch.
